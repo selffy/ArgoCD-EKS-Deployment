@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form action="/calculate" method="get">
+        <input type="number" name="num1" placeholder="Number 1" required>
+        <input type="number" name="num2" placeholder="Number 2" required>
+        <select name="operation">
+            <option value="Add">+</option>
+            <option value="Subtract">-</option>
+            <option value="Multiply">X</option>
+	    <option value="Divide">÷</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+    <div>
+        <h2>Result: <span th:text="${result}">0</span></h2>
+        <p th:if="${error}" th:text="${error}"></p>
+    </div>
+</body>
+</html>

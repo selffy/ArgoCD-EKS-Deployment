@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - springboot
+
+  springboot:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
